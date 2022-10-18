@@ -1,5 +1,7 @@
-# Bully Jar Bot
-* Description: A Discord bot made with @Javacord and with love from the Bananaz Tech team!
+[![SOFT](https://github.com/Aman7123/discord-nft-bot/actions/workflows/SOFT.yml/badge.svg?branch=main)](https://github.com/Aman7123/discord-nft-bot/actions/workflows/SOFT.yml) [![RELEASE](https://github.com/Aman7123/discord-nft-bot/actions/workflows/RELEASE.yml/badge.svg?branch=main)](https://github.com/Aman7123/discord-nft-bot/actions/workflows/RELEASE.yml)
+
+# Bananaz Discord Bot
+* Description: A Discord bot made with @Javacord and @ProjectOpenSea API!
 * Version: (Check main for release or develop for dev)
 * Creator: Aaron Renner
 
@@ -12,35 +14,14 @@
   
 ## Introduction
 
-This Java application is built on the Spring-Boot framework! This project interacts with Discord commands or startup objects in the application.yml to keep tract of moments in Discord.
+This Java application is built on the Spring-Boot framework! This project interacts with Discord commands or startup objects in the application.yml to monitor NFT listings and write them to a Discord channel, see *How-TO* below for more details.
 
 ## Setup
 ### Application.yml Setup
 The following document formatting MUST REMAIN THE SAME, replace or add only where noted to!
-
-``` yaml
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: update
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://aaronrenner.com:8306/botstuff?createDatabaseIfNotExist=true
-    username: USERNAME
-    password: PASSWORD
-    hikari:
-      connectionTimeout: 120000
-      idleTimeout: 600000
-      # 15 minutes recommended for lifetime
-      maxLifetime: 900000
-      maximumPoolSize: 25
-# Custom
-# Custom
-nft-bot:
-  discord:
-    token: <DISCORD-TOKEN>
-    commandPrefix: <DISCORD-COMMAND-PREFIX>
-```
+Tips:
+* You MUST have this Discord bots role above `LOW, MEDIUM, HIGH`.
+* The position of the `discord` and `listings` items below `nft-bot` are essential!
 
 ### Running the Project
 
@@ -67,7 +48,7 @@ To build a container that can execute the application from a safe location you c
 ```Dockerfile
 CMD [ "java", \
         "-jar", \
-        "discord-bot.jar"]
+        "discord-nft-bot.jar"]
 ```
 
 ## Libraries

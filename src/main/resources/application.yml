@@ -1,0 +1,38 @@
+logging:
+  level:
+    com: 
+      aaronrenner: DEBUG
+spring:
+  jpa:
+#    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      use_sql_comments: true
+      format_sql: true
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://aar.dev:3306/BullyJarDev?createDatabaseIfNotExist=true
+    username: USERNAME
+    password: PASSWORD
+    hikari:
+      connectionTimeout: 120000
+      idleTimeout: 600000
+      maxLifetime: 31000
+      maximumPoolSize: 4
+  banner:
+    # Custom Banner
+    location: classpath:banner.txt
+    
+# Health check acuator
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+    web:
+      exposure:
+        include: "*"
