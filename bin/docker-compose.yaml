@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  discordNftBot:
+    image: arennerwv/bananaz-discord-bot:latest
+    container_name: bananaz-discord-bot-prod
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3

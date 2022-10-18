@@ -1,0 +1,17 @@
+logging:
+  level:
+    com: 
+      aaronrenner: DEBUG
+spring:
+  banner:
+    # Custom Banner
+    location: classpath:banner.txt
+  main:
+    # Disable web listener back-end
+    web-application-type: none
+
+# Custom settings
+nft-bot:
+  discord:
+    token: ODgyNzg0MjEzNDg3NzIyNDk2.YTAa3Q.i9hhFdX3jxM9wU_fB0dVVWiW_RE
+    commandPrefix: "!"
