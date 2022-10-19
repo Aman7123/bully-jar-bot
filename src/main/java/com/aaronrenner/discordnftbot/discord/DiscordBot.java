@@ -78,7 +78,7 @@ public class DiscordBot {
 		}
 		String addedToJarMsg = "added %s to your account for a total of %s:coin:'s";
 		String currentRecord = String.format(addedToJarMsg, coinsAddedDisplay, newCounterTotal);
-		String successMsg = String.format("%s %s", commandRunner.getMentionTag(), currentRecord);
+		String successMsg = String.format("%s, %s", commandRunner.getMentionTag(), currentRecord);
 		new MessageBuilder().replyTo(existingMessageId).setContent(successMsg).send(executedIn);
 	}
 	

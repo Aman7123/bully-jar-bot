@@ -19,10 +19,10 @@ public class Help {
 	public Help(Optional<User> userSender, Optional<Server> serverSentIn, Color botColor, DiscordBot bot, Message message, String commandPrefix) {
 		EmbedBuilder generalCommands = new EmbedBuilder()
 			.setColor(botColor)
-			.addField(commandPrefix + "donate <amount>",		donateDescription)
-			.addField(commandPrefix + "jar",			        leaderboardDescription)
-			.addField(commandPrefix + "clear",			        clearDescription)
-			.addField(commandPrefix + "help", 					helpDescription)
+			.addField(commandPrefix + "donate <amount> <optional: user>", donateDescription)
+			.addField(commandPrefix + "jar",			        		  leaderboardDescription)
+			.addField(commandPrefix + "clear",			        		  clearDescription)
+			.addField(commandPrefix + "help", 							  helpDescription)
 		;
 		
 		MessageBuilder messageBuilder = new MessageBuilder();
